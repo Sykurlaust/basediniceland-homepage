@@ -4,6 +4,11 @@
 * { margin: 0; padding: 0; }
 html, body { height: 100%; }
 
+
+
+header, main, footer { position: relative; z-index: 1; }
+
+
 /* =========================
    1) PAGE LAYOUT
 ========================= */
@@ -114,14 +119,16 @@ a.circle:hover {
 }
 
 .container .box {
-  position: relative;
-  width: 275px;
-  height: 275px;
-  background: #000;
-  overflow: hidden;
-  border-radius: 20px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+ position:absolute;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  box-sizing:  border-box;
+  background: transparent;
+  box-shadow: none;
 }
+
 
 /* 3D hover effects */
 .container .box:hover {  transform: rotateY(0deg);}
@@ -142,13 +149,7 @@ a.circle:hover {
 
 /* Overlay gradient on hover */
 .container .box .imgBx::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgb(238,234,234), #b0a0a0);
-  mix-blend-mode: multiply;
-  opacity: 0;
-  transition: .5s;
-  z-index: 1; /* below text */
+  display: none;
 }
 .container .box:hover .imgBx::before { opacity: 1; }
 
@@ -168,3 +169,7 @@ a.circle:hover {
   margin: 0;
     font-family: 'Arial', sans-serif;
 }
+
+.container .box .imgBx::before { display: none !important; }
+.bg, .bg2, .bg3 { z-index: -1 !important; }
+header, main, footer { z-index: 1; position: relative; }
