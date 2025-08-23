@@ -117,19 +117,6 @@ a.circle:hover {
   transform-style: preserve-3d;
   gap: 15px;
 }
-
-.container .box {
- position:absolute;
-  z-index: 2;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  box-sizing:  border-box;
-  background: transparent;
-  box-shadow: none;
-}
-
-
 /* 3D hover effects */
 .container .box:hover {  transform: rotateY(0deg);}
 .container .box:hover {
@@ -238,3 +225,10 @@ a.circle:hover {
 /* keep background layers behind everything */
 .bg, .bg2, .bg3{ z-index: -1; pointer-events: none; }
 header, main, footer{ position: relative; z-index: 1; }
+
+
+/* ensure no other animation overrides it */
+a.circle { animation: h 4s ease both !important; }
+
+/* keep its 3D context */
+header { perspective: 900px; transform-style: preserve-3d; }
