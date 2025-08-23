@@ -67,22 +67,22 @@ a.circle {
   animation: h 4s ease both;   /* entrance animation */
 }
 
-a.circle::before,
-a.circle::after {
-  content: '';
+a.circle::before {
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
   background: center/cover url("https://github.com/Sykurlaust/veitur-demo/blob/main/img/veiturlogo.png?raw=true");
   backface-visibility: hidden;
+  animation: f 4s ease both;  /* keep your reveal animation */
 }
 
-a.circle::before { animation: f 4s ease both; }
-a.circle::after  {
-  filter: brightness(0.35);
-  transform: rotateY(-180deg);
-  animation: g 4s ease both;
+a.circle::after {
+  content: none;
 }
+
+
+
 
 /* Circle animations */
 @keyframes h {
