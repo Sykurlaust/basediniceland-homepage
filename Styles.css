@@ -74,7 +74,7 @@ a.circle::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: center/cover url("https://github.com/Sykurlaust/veitur-demo/blob/main/img/veiturlogo.png?raw=true");
+  background: center/cover url("../images/basediniceland.svg");
   backface-visibility: hidden;
   animation: f 4s ease both;  /* keep your reveal animation */
 }
