@@ -68,14 +68,15 @@ a.circle {
   transform-origin: center center;
   will-change: transform;
   animation: h 4s ease both;   /* entrance animation */
+  background: rgba(255,0,0,.15)
 }
 
 a.circle::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 50%;
-  background: center/cover url("../img/pngbased.png");
+  border-radius: 0%;
+  background: center/cover url("img/pngbased.png");
   backface-visibility: hidden;
   animation: f 4s ease both;  /* keep your reveal animation */
 }
