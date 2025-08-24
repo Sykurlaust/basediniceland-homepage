@@ -59,8 +59,8 @@ footer p {
    4) CIRCLE (Veitur logo)
 ========================= */
 a.circle {
-  width: 160px;
-  height: 160px;
+  width: 260px;
+  height: 260px;
   position: relative;
   display: block;
   border-radius: 50%;
@@ -68,7 +68,7 @@ a.circle {
   transform-origin: center center;
   will-change: transform;
   animation: h 4s ease both;   /* entrance animation */
-  background: rgba(255,0,0,.15)
+  background: none;
 }
 
 a.circle::before {
