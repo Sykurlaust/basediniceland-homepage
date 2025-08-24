@@ -17,20 +17,10 @@ body {
   min-height: 100vh;
   display: flex;              /* stack header, main, footer */
   flex-direction: column;
-  font-family: sans-serif
+  font-family: sans-serif;
   line-height: 1.6;
-  color:#fff;
-  overflow-x: hidden;
-  padding:0;
-  -webkit-text-size-adjust:100%;
-  tab-size: 4;
-
-}
-
-main {
-  flex: 1;                    /* take remaining space */
-  display: grid;              /* center gallery in main */
-  place-items: center;
+  color: #fff;                /* ← semicolon added */
+  padding: 0;
 }
 
 /* =========================
