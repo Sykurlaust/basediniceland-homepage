@@ -30,8 +30,8 @@ main {
 ========================= */
 header {
   display: flex;
-  justify-content: center;
-  padding: 24px 0;
+  justify-content: flex-start;
+  padding: 16px ;
   perspective: 900px;              /* <- adds depth */
   transform-style: preserve-3d;
 }
@@ -56,8 +56,8 @@ footer p {
    4) CIRCLE (Veitur logo)
 ========================= */
 a.circle {
-  width: 50vmin;
-  height: 50vmin;
+  width: 80px;
+  height: 80px;
   position: relative;
   display: block;
   border-radius: 50%;
