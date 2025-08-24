@@ -4,10 +4,7 @@
 * { margin: 0; padding: 0; }
 html, body { height: 100%; }
 
-
-
 header, main, footer { position: relative; z-index: 1; }
-
 
 /* =========================
    1) PAGE LAYOUT
@@ -17,32 +14,31 @@ body {
   min-height: 100vh;
   display: flex;              /* stack header, main, footer */
   flex-direction: column;
-  font-family: sans-serif;
+  font-family: "Signifier Light", "Times New Roman", georgia, times, serif;
+  font-variant-ligatures: common-ligatures;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  font-feature-settings: "liga", "clig"; 
   line-height: 1.6;
-  color: #fff;                /* ← semicolon added */
+  color: #fff;
   padding: 0;
   background: #111;
 }
 
 /* =========================
-   2) HEADER (your Veitur logo)
+   2) HEADER
 ========================= */
 header {
-  display: flex;
-  position: sticky;       /* stick to top when scrolling */
-  top: 0;
-  z-index:  10;
-  background: transparent;
-  justify-content: flex-start;
-  padding: 16px ;
-  perspective: 900px;              /* <- adds depth */
+  display: block;   /* no flex needed since only logo */
+  perspective: 900px; 
   transform-style: preserve-3d;
 }
+
 /* =========================
    3) FOOTER
 ========================= */
 footer {
-  margin-top: auto;           /* push footer to bottom */
+  margin-top: auto;           
   display: flex;
   justify-content: center;
   padding: 24px 0;
@@ -56,34 +52,31 @@ footer p {
 }
 
 /* =========================
-   4) CIRCLE (Veitur logo)
+   4) LOGO (circle)
 ========================= */
 a.circle {
-  width: 260px;
-  height: 260px;
-  position: relative;
-  display: block;
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%); /* exact horizontal center */
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  transform-style: preserve-3d;
-  transform-origin: center center;
-  will-change: transform;
-  animation: h 4s ease both;   /* entrance animation */
-  background: none;
+  z-index: 1000;
+  animation: none !important; /* stop container animation */
 }
 
 a.circle::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 0%;
-  background: center/cover url("img/pngbased.png");
+  border-radius: 50%;
+  background: center/contain no-repeat url("img/bestbased.png");
   backface-visibility: hidden;
-  animation: f 4s ease both;  /* keep your reveal animation */
+  animation: f 3s ease-in-out both;  /* reveal animation */
 }
 
-a.circle::after {
-  content: none;
-}
+a.circle::after { content: none; }
 
 /* Circle animations */
 @keyframes h {
@@ -92,7 +85,7 @@ a.circle::after {
   to     { transform: translateY(0) scale(1) rotateX(0deg); opacity: 1; }
 }
 @keyframes f {
-  from { clip-path: inset(0 80% 0 0); }
+  from { clip-path: inset(0 100% 0 0); }
   60%  { clip-path: inset(0 0% 0 0); }
   to   { clip-path: inset(0 0% 0 0); }
 }
@@ -101,29 +94,63 @@ a.circle::after {
   60%  { clip-path: inset(0 0 0 0);   transform-origin: 50% 50%; transform: rotateY(-20deg); }
   to   { clip-path: inset(0 0 0 100%); transform-origin: 100% 50%; transform: rotateY(0deg); }
 }
-a.circle:hover {
-  animation: h 1200ms ease both; /* reset hover animation */
+
+a.circle:hover { animation: none; }
+
+/* =========================
+   5) BACKGROUND LAYERS
+========================= */
+.bg, .bg2, .bg3 { 
+  z-index: -1; 
+  pointer-events: none; 
 }
-/* =========================
-   5) GALLERY (cards)
-========================= */
-
-/* keep background layers behind everything */
-.bg, .bg2, .bg3{ z-index: -1; pointer-events: none; }
-header, main, footer{ position: relative; z-index: 1; }
-
-
-/* ensure no other animation overrides it */
-a.circle { animation: h 4s ease both !important; }
-
-/* keep its 3D context */
-header { perspective: 900px; transform-style: preserve-3d; }
 
 /* =========================
-   .textiveitur wrapper
+   6) HERO / TEXT
 ========================= */
-.textiveitur {
-  max-width: 700px;    /* keeps text from being too wide */
-  margin: 0 auto;      /* centers the block */
-  padding: 2rem;       /* adds space around text */
+.hero { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: flex-start;
+  padding-top: 50px;
+}
+
+.texti {
+  margin-top: 220px;     /* spacing below logo */
+  text-align: center;
+  max-width: 700px;
+  padding: 0 1rem;
+}
+
+.texti h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+.texti h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   7) til að sjá miðjuna
+========================= */
+html::before {
+  content:"";
+  position: fixed;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(255,0,0,.8);
+  pointer-events: none;
+  z-index: 99999;
 }
