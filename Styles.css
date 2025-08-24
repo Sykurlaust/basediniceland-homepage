@@ -32,7 +32,7 @@ header {
   position: sticky;       /* stick to top when scrolling */
   top: 0;
   z-index:  10;
-  background: #111;
+  background: transparent;
   justify-content: flex-start;
   padding: 16px ;
   perspective: 900px;              /* <- adds depth */
@@ -75,7 +75,7 @@ a.circle::before {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: center/cover url("../img/basediniceland.svg");
+  background: center/cover url("../img/pngbased.png");
   backface-visibility: hidden;
   animation: f 4s ease both;  /* keep your reveal animation */
 }
