@@ -30,6 +30,10 @@ main {
 ========================= */
 header {
   display: flex;
+  position: sticky;       /* stick to top when scrolling */
+  top: 0;
+  z-index:  10;
+  background: transparent;
   justify-content: flex-start;
   padding: 16px ;
   perspective: 900px;              /* <- adds depth */
@@ -56,8 +60,8 @@ footer p {
    4) CIRCLE (Veitur logo)
 ========================= */
 a.circle {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   position: relative;
   display: block;
   border-radius: 50%;
@@ -81,9 +85,6 @@ a.circle::after {
   content: none;
 }
 
-
-
-
 /* Circle animations */
 @keyframes h {
   from   { transform: translateY(12px) scale(0.96) rotateX(8deg); opacity: 0.0; }
@@ -106,121 +107,6 @@ a.circle:hover {
 /* =========================
    5) GALLERY (cards)
 ========================= */
-.container {
-  max-width: 1160px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;            /* wrap on small screens */
-  perspective: 500px;         /* needed for 3D tilt */
-  transform-style: preserve-3d;
-  gap: 15px;
-}
-/* 3D hover effects */
-.container .box:hover {  transform: rotateY(0deg);}
-.container .box:hover {
-  transform: rotateY(0deg) scale(1.25);
-  z-index: 1;
-  box-shadow: 0 40px 40px rgba(162, 157, 157, 0.5);
-}
-
-/* Image layer */
-.container .box .imgBx { position: absolute; inset: 0; }
-.container .box .imgBx img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  z-index: 0;
-}
-
-/* Overlay gradient on hover */
-.container .box .imgBx::before {
-  display: none;
-}
-.container .box:hover .imgBx::before { opacity: 1; }
-
-/* Text content */
-.container .box .content {
-  position: absolute; inset: 0;
-  z-index: 2;                  /* above overlay */
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.container .box .content h2,
-.container .box .content p {
-  color: #fff;
-  margin: 0;
-    font-family: 'Arial', sans-serif;
-}
---------
-/* ---- CARD GALLERY: known-good reset ---- */
-.container{
-  max-width: 1160px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
-
-.container .box{
-  position: relative;
-  width: 275px;        /* card size */
-  height: 275px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #000;    /* base (hidden by image) */
-  transform: none;
-}
-
-.container .box .imgBx{
-  position: absolute;
-  inset: 0;
-}
-
-.container .box .imgBx img{
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* make the photo fill the card */
-}
-
-/* if you renamed the inner text wrapper */
-.container .box .card-content{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 16px;
-  background: transparent;
-  box-shadow: none;
-  z-index: 2;
-}
-
-.container .box .card-content h2,
-.container .box .card-content p{
-  color: #fff;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* optional overlay on hover – safe version */
-.container .box .imgBx::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.45));
-  opacity: 0;
-  transition: opacity .3s;
-  z-index: 1;
-}
-.container .box:hover .imgBx::before{ opacity: 1; }
 
 /* keep background layers behind everything */
 .bg, .bg2, .bg3{ z-index: -1; pointer-events: none; }
