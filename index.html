@@ -11,8 +11,9 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" 
   rel="stylesheet">
 </head>
-<body>
 
+<!-- background layers -->
+<body>
 
 <div class="bg"></div>
 <div class="bg bg2"></div>
@@ -26,6 +27,16 @@
 
 <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
 <label for="page-nav-toggle">
+
+  <nav class="main-navigation">
+  <ul>
+    <li><a href="#" class="open-popup" data-target="about-popup">About</a></li>
+    <li><a href="#" class="open-popup" data-target="contact-popup">Contact</a></li>
+  </ul>
+</nav>
+
+
+
   <svg class="icon--menu-toggle" viewBox="0 0 60 30">
     <g class="icon-group">
       <g class="icon--menu">
@@ -43,17 +54,11 @@
 
 <nav class="main-navigation">
   <ul>
-    <li><a href="#about" class="open-popup" data-target="about-popup">About</a></li>
-    <li><a href="#contact" class="open-popup" data-target="contact-popup">Contact</a></li>
-  </ul>
-</nav>
-
-<nav class="main-navigation">
-  <ul>
     <li><a href="#" class="open-popup" data-target="about-popup">About</a></li>
     <li><a href="#" class="open-popup" data-target="contact-popup">Contact</a></li>
   </ul>
 </nav>
+
 
 <!-- hidden popups -->
 <div id="about-popup" class="popup">
@@ -115,31 +120,11 @@
 
 
 
-</main>
 
-<!-- About Popup -->
-<div id="about-popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <h2>About</h2>
-    <p>
-      Here you can find Tattoo Artists 
-      that are based or currently working in Iceland.
-    </p>
-  </div>
-</div>
+<!-- here ------------>
 
-<!-- Contact Popup -->
-<div id="contact-popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <h2>Contact</h2>
-    <p>
-      You can contact me at:
-      <a href="mailto:basediniceland@gmail.com">basediniceland@gmail.com</a>
-    </p>
-  </div>
-</div>
+
+
 
 
 

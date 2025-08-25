@@ -442,7 +442,6 @@ h1 {
     a {
       animation: link-appear calc(var(--duration) * 1.5) var(--ease) forwards;
     }
-  
       }
     }
  
@@ -473,10 +472,10 @@ h1 {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: transparent;
+background: rgba(0,0,0,0.92);
   justify-content: center;
   align-items: center;
-  z-index: 3000;
+  z-index: 5000;
 }
 
 .popup-content {
@@ -525,10 +524,37 @@ footer { position: relative; z-index: 1; }
 
 
 /* Hide the fixed logo when a popup is open */
+
 body.hide-logo a.circle,
 body.hide-logo a.circle::before,
 body.hide-logo a.circle::after {
   opacity: 0 !important;           /* force it to disappear */
   pointer-events: none !important;  /* block clicks */
   transition: opacity .2s ease;     /* smooth fade */
+}
+
+/* images scale */
+img { max-width: 100%; height: auto; }
+
+/* cards: stack on phones, 2-up on tablets, 3-up on desktop */
+.container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+.container .box { width: 100%; max-width: 28rem; }
+
+@media (min-width: 768px) {
+  .container .box { width: calc(50% - 1.5rem); }
+}
+
+@media (min-width: 1024px) {
+  .container .box { width: calc(33.333% - 1.5rem); }
+}
+
+/* smaller logo on small screens */
+@media (max-width: 600px) {
+  a.circle { width: 100px; height: 100px; top: 16px; }
+  main.hero { padding-top: 160px; } /* less gap on phones */
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .bg, .bg2, .bg3 { animation: none; }
 }
