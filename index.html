@@ -3,23 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veitur Demo</title>
+  <title>BasedinIceland</title>
+
+ 
   <link rel="stylesheet" href="Styles.css" />
   <link rel="stylesheet" href="background.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" 
+  rel="stylesheet">
 </head>
 <body>
 
-<!-- Background layers --> 
+
 <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 
-  <header>
-<main class="hero">
+
+
+<header>
+
   <a href="#" class="circle" aria-label="Basediniceland"></a>
 
+<input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+<label for="page-nav-toggle">
+  <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+    <g class="icon-group">
+      <g class="icon--menu">
+        <path d="M 6 0 L 54 0" />
+        <path d="M 6 15 L 54 15" />
+        <path d="M 6 30 L 54 30" />
+      </g>
+      <g class="icon--close">
+        <path d="M 15 0 L 45 30" />
+        <path d="M 15 30 L 45 0" />
+      </g>
+    </g>
+  </svg>
+</label>
+
+<nav class="main-navigation">
+  <ul>
+    <li><a href="#about" class="open-popup" data-target="about-popup">About</a></li>
+    <li><a href="#contact" class="open-popup" data-target="contact-popup">Contact</a></li>
+  </ul>
+</nav>
+
+<nav class="main-navigation">
+  <ul>
+    <li><a href="#" class="open-popup" data-target="about-popup">About</a></li>
+    <li><a href="#" class="open-popup" data-target="contact-popup">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- hidden popups -->
+<div id="about-popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>About</h2>
+    <p>Here you can find Tattoo Artists 
+      that are based or currently working in Iceland</p>
+  </div>
+</div>
+
+<div id="contact-popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>Contact</h2>
+    <p>You can reach us at basediniceland@gmail.com</p>
+  </div>
+</div>
+
+<main class="main-content">
+  
+</main>
 
 </header>
+<main class="hero">
   
        <section class="container">
        <div class="box">
@@ -51,30 +110,60 @@
             </div>
             </div>
             </section>
-            
-<div>
-
-    </div>
-</div>
-  </div>  
 
 </main>
 
-  <footer>
+
+
+</main>
+
+<!-- About Popup -->
+<div id="about-popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>About</h2>
+    <p>
+      Here you can find Tattoo Artists 
+      that are based or currently working in Iceland.
+    </p>
+  </div>
+</div>
+
+<!-- Contact Popup -->
+<div id="contact-popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>Contact</h2>
+    <p>
+      You can contact me at:
+      <a href="mailto:basediniceland@gmail.com">basediniceland@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+  <footer id="contact">
+    
     <section id="lab_social_icon_footer">
-<!-- Include Font Awesome Stylesheet in Header -->
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-        <div class="text-center center-block">
-                <a href="https://www.facebook.com/Basediniceland"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+        <ul class="text-center center-block">
+              <a href="https://www.facebook.com/Basediniceland"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
 	            <a href="https://twitter.com/Basediniceland"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
 	            <a href="https://www.instagram.com/basediniceland"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
 	            <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-    </div>
+    </ul>
+</div>
+   
+<p>© 2025 BasedinIceland</p>
 </div>
 </section>
-
   </footer>
+  
+  <script src="pop.js"></script>
+
+
 </body>
 </html>
  
