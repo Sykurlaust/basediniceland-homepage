@@ -434,17 +434,14 @@ h1 {
     &:after {
       animation: nav-bg var(--nav-duration) var(--ease) forwards;
     }
-    
-    li:after {
-      animation: nav-line var(--duration) var(--ease) forwards;
-    }
-    
-    a {
+  
+     a {
       animation: link-appear calc(var(--duration) * 1.5) var(--ease) forwards;
     }
+   
       }
     }
- 
+     
 
 @keyframes nav-bg {
   from { transform: translateX(-100%) skewX(-15deg) }
